@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+    <head>
+        <script src="https://unpkg.com/vue@next"></script>
+        <link rel="stylesheet" href="../style.css" type="text/css">
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="history in histories">
+                    <p>$ {{ history.command }}</p>
+                    <p>{{ history.output }}</p>
+                </li>
+                <li>
+                    <form v-on:submit.prevent="addHistory">
+                        $ 
+                        <input v-model="newCommand">
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <footer></footer>
+    </body>
+</html>
+
+<!-- この場所に置くと動く-->
+<script src="../js/index.js"></script>
